@@ -64,7 +64,6 @@ def top_k_results():
     weight = "0.2"
     top_k = "0"
     if request.method == "POST":
-        app.logger.info("I am here")
         question_select = request.form.get('question_select', '')
         weight = request.form.get('weight', '')
         top_k = request.form.get('top_k', '')
