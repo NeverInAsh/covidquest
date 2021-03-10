@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 import pandas as pd
 import numpy as np
 import sys
+import os
 
 app = Flask(__name__, template_folder='./templates/')
 
@@ -89,4 +90,5 @@ def top_k_results():
 
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', 5000, debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run('0.0.0.0', port)
